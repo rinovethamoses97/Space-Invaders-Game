@@ -1,0 +1,20 @@
+class Bomb{
+    constructor(x_,y_){
+        this.pos=createVector(x_+5,y_)
+        this.velocity=createVector(0,0);
+        this.acceleration=createVector(0,0);
+        this.width=10;
+        this.height=20;
+    }
+    show(){
+        rect(this.pos.x,this.pos.y,this.width,this.height);
+    }
+    update(){
+        this.velocity.add(this.acceleration);
+        this.pos.add(this.velocity);
+        this.acceleration=createVector(0,0);
+    }
+    applyForce(force){
+        this.acceleration.y=force;
+    }
+}

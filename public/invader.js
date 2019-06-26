@@ -1,0 +1,22 @@
+class Invader{
+    constructor(x_,y_){
+        this.pos=createVector(x_,y_);
+        this.velocity=createVector(0,0);
+        this.acceleration=createVector(0,0);
+        this.width=20;
+        this.height=20;
+    }
+    update(){
+        this.velocity.add(this.acceleration);
+        this.pos.add(this.velocity);
+        this.acceleration=createVector(0,0);
+    }
+    appleForce(force){
+        this.acceleration.y=force;
+    }
+    show(){
+        stroke(255,0,0);
+        fill(255,0,0);
+        rect(this.pos.x,this.pos.y,this.width,this.height);
+    }
+}
