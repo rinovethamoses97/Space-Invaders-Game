@@ -15,12 +15,21 @@ class Player{
     }
     moveRight(){
         this.pos.x+=this.speed;
+        if(this.pos.x+this.width>width){
+            this.pos.x=width-this.width;
+        }
     }
     moveLeft(){
         this.pos.x-=this.speed;
+        if(this.pos.x<0){
+            this.pos.x=0;
+        }
     }
     moveUp(){
         this.pos.y-=this.speed;
+        if(this.pos.y<0){
+            this.pos.y=0;
+        }
     }
     moveDown(){
         this.pos.y+=this.speed;
