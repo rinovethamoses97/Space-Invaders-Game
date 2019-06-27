@@ -3,7 +3,7 @@ class Invader{
         this.pos=createVector(x_,y_);
         this.velocity=createVector(0,0);
         this.acceleration=createVector(0,0);
-        this.width=20;
+        this.width=random(40,60);
         this.height=20;
     }
     update(){
