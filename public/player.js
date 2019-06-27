@@ -7,11 +7,13 @@ class Player{
         this.speed=3.5;
         this.missed=0;
         this.dead=false;
+        this.score=0;
     }
     show(){
         stroke(255);
         fill(255);
         rect(this.pos.x,this.pos.y,this.width,this.height);
+        text("Score = "+this.score,10,40);
     }
     moveRight(){
         this.pos.x+=this.speed;
@@ -52,6 +54,7 @@ class Player{
             for(var j=invaders.length-1;j>=0;j--){
                 if (collideRectRect(this.bombs[i].pos.x,this.bombs[i].pos.y,this.bombs[i].width,this.bombs[i].height,invaders[j].pos.x,invaders[j].pos.y,invaders[j].width,invaders[j].height)){
                     invaders.splice(j,1);
+                    this.score++;
                 }                
             }
         }
