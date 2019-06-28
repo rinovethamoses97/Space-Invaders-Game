@@ -62,9 +62,14 @@ function draw(){
         player.moveDown();
     }
     if(player.dead){
-        console.log("Game Over!");
-        noLoop();
+        alert("Game Over!");
+        reset();
     }
+}
+function reset(){
+    player=new Player();
+    invaderRate=200;
+    invaders=[];
 }
 function keyPressed(){
     if(keyCode==32){
