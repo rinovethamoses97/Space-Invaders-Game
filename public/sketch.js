@@ -27,20 +27,20 @@ function draw(){
     player.checkBombsInvadersHit(invaders);
     player.checkPlayerInvadersHit(invaders);
     player.showBombs();
-    stroke(255);
-    noFill();
-    text("Missed = "+player.missed,10,20);
     for(var i=invaders.length-1;i>=0;i--){
         invaders[i].update();
         invaders[i].show();
         if(invaders[i].pos.y+invaders[i].height>=height){
             invaders.splice(i,1);
             player.missed++;
-            if(player.missed>=10){
+            if(player.missed>=30){
                 player.dead=true;
             }
         }
     }
+    stroke(255);
+    noFill();
+    text("Missed = "+player.missed,10,20);
     if(keyIsDown(39)){
         player.moveRight();
     }
