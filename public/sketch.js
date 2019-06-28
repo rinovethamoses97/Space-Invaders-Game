@@ -4,8 +4,10 @@ var key=0;
 var shootSound;
 var invaderRate=200;
 var productionRate=3;//ranges from 1 to 10 for the current canvas width
+var invaderImage;
 function preload(){
     shootSound=loadSound("./gunsound.mp3");
+    invaderImage=loadImage("./invaderimage.png");
 }
 function setup(){
     createCanvas(600,600);

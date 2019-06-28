@@ -4,7 +4,7 @@ class Invader{
         this.velocity=createVector(0,0);
         this.acceleration=createVector(0,0);
         this.width=50;
-        this.height=20;
+        this.height=40;
     }
     update(){
         this.velocity.add(this.acceleration);
@@ -15,8 +15,9 @@ class Invader{
         this.acceleration.y=force;
     }
     show(){
-        stroke(255,0,0);
-        fill(255,0,0);
-        rect(this.pos.x,this.pos.y,this.width,this.height);
+        // stroke(255,0,0);
+        // fill(255,0,0);
+        image(invaderImage,this.pos.x,this.pos.y,this.width,this.height);
+        // rect(this.pos.x,this.pos.y,this.width,this.height);
     }
 }
