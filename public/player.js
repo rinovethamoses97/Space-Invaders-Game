@@ -41,8 +41,11 @@ class Player{
         }
     }
     updateBombs(){
-        for(var i in this.bombs){
-            this.bombs[i].update();    
+        for(var i=this.bombs.length-1;i>=0;i--){
+            this.bombs[i].update();
+            if(this.bombs[i].pos.y<0){
+                this.bombs.splice(i,1);
+            }    
         }
     }
     showBombs(){
