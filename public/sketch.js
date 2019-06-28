@@ -7,18 +7,20 @@ var productionRate=3;//ranges from 1 to 10 for the current canvas width
 var invaderImage;
 var gunImage;
 var bulletImage;
+var backgroundImage;
 function preload(){
     shootSound=loadSound("./gunsound.mp3");
     invaderImage=loadImage("./invaderimage.png");
     gunImage=loadImage("./gun.png");
     bulletImage=loadImage("./bullet.png");
+    backgroundImage=loadImage("./background.jpg");
 }
 function setup(){
     createCanvas(600,600);
     player=new Player();
 }
 function draw(){
-    background(0);
+    background(backgroundImage);
     if(frameCount%invaderRate==0){
         for(var i=0;i<productionRate;i++){
             var invader=new Invader(random((i)*(width/productionRate),(i+1)*(width/productionRate)-50,0));
