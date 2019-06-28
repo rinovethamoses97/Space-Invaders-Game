@@ -1,6 +1,6 @@
 class Player{
     constructor(){
-        this.width=20;
+        this.width=40;
         this.height=60;
         this.pos=createVector(width/2,height-this.height)
         this.bombs=[];
@@ -10,9 +10,10 @@ class Player{
         this.score=0;
     }
     show(){
-        stroke(255);
-        fill(255);
-        rect(this.pos.x,this.pos.y,this.width,this.height);
+        image(gunImage,this.pos.x,this.pos.y,this.width,this.height);
+        // stroke(255);
+        // fill(255);
+        // rect(this.pos.x,this.pos.y,this.width,this.height);
         text("Score = "+this.score,10,40);
     }
     moveRight(){
